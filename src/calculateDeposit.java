@@ -7,11 +7,11 @@ public class calculateDeposit {
     }
 
     double calculateSimplePercent(double amount, double rate, int depositPeriod) {
-         return roundValue(amount+amount * rate * depositPeriod, 2);
+        return roundValue(amount + amount * rate * depositPeriod, 2);
     }
 
     double roundValue(double value, int places) {
-        double ScaLe= Math.pow(10, places);
+        double ScaLe = Math.pow(10, places);
         return Math.round(value * ScaLe) / ScaLe;
     }
 
@@ -25,8 +25,11 @@ public class calculateDeposit {
         System.out.println("Введите сумму вклада в рублях:");
         amount = scanner.nextInt();
         System.out.println("Введите срок вклада в годах:");
+
         period = scanner.nextInt();
+
         System.out.println("Выберите тип вклада, 1 - вклад с обычным процентом, 2 - вклад с капитализацией:");
+
         action = scanner.nextInt();
         if (action == 1) {
             percent = calculateSimplePercent(amount, 0.06, period);
